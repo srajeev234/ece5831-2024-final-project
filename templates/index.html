@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Caption Generator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h3 {
+            color: #333333;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .project-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555555;
+        }
+        .project-info p {
+            margin: 5px 0;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .uploaded-image {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .uploaded-image img {
+            border-radius: 12px;
+            max-width: 100%;
+            height: auto;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .uploaded-image img:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .caption {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+        .about-project {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            text-align: center;
+            background-color: #343a40;
+            color: white;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Project Title and Info -->
+        <h1 class="text-center">Image Caption Generator</h1>
+        <div class="project-info">
+            <p>ECE5831 Fall 2024 Project</p>
+            <p><strong>Author:</strong> Sankalp Rajeev | <strong>Professor:</strong> Jaerok Kwon</p>
+        </div>
+
+        <!-- Upload Form -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h5 class="text-center mb-3">Upload an Image</h5>
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="file" name="file" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Generate Caption</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Display Uploaded Image and Caption -->
+        {% if image_path %}
+        <div class="uploaded-image">
+            <h3>Your Uploaded Image</h3>
+            <img src="{{ image_path }}" alt="Uploaded Image" class="img-fluid shadow">
+            <p class="caption">Caption: {{ caption }}</p>
+        </div>
+        {% endif %}
+
+        <!-- About Project Section -->
+<!-- About the Project -->
+<!-- About the Project -->
+<div class="container mt-5">
+    <h3 class="font-weight-bold">About the Project</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm p-4">
+                <p class="card-text">
+                    This project generates descriptive captions for uploaded images using a deep learning pipeline. 
+                    It employs the <strong>InceptionV3</strong> model for image feature extraction and a 
+                    <strong>Recurrent Neural Network (LSTM)</strong> for sequence generation.
+                </p>
+                <p class="card-text">
+                    The model is trained on a large dataset of images and corresponding captions. 
+                    Beam search is implemented to generate the most relevant and high-quality captions. 
+                    The workflow combines <strong>image processing</strong> (using Convolutional Neural Networks) 
+                    and <strong>natural language processing</strong> (sequence prediction).
+                </p>
+                <p class="card-text">
+                    This project demonstrates the synergy of computer vision and natural language processing, 
+                    enabling machines to "see" and "describe" images in a human-like manner. It was developed as 
+                    part of the ECE5831 Fall 2024 course under the guidance of <strong>Professor Jaerok Kwon</strong>.
+                </p>
+                <p class="card-text">
+                    Tools used include <strong>TensorFlow/Keras</strong> for deep learning, <strong>Flask</strong> 
+                    for the web interface, and <strong>Bootstrap</strong> for responsive design.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sample Images from Dataset -->
+<div class="container mt-5">
+    <h3 class="font-weight-bold">Sample Images from Dataset</h3>
+    <p class="text-muted mb-4">
+        Explore an example output generated by the model. The following is a snapshot from our dataset.
+    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm p-3">
+                <img src="{{ url_for('static', filename='uploads/output.png') }}" 
+                     alt="Sample Output" 
+                     class="img-fluid rounded" 
+                     style="max-height: 400px; object-fit: contain;">
+                <div class="card-body">
+                    <p class="card-text font-italic text-muted">
+                        "A glimpse of the image captioning model's output on sample images."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Image Caption Generator | Developed by Sankalp Rajeev</p>
+    </div>
+</body>
+</html>
