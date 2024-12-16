@@ -63,7 +63,8 @@ The model was trained on the **Flickr8k Dataset**. You can access the dataset he
 ## Additional Resources
 - **Google Drive (Project Files)**: [Google Drive Link](https://drive.google.com/drive/folders/18OZUeBjL5y-FdicXgfU55N78aBcFO2fI?usp=drive_link)  
 - **Github**: [Github Link](https://github.com/srajeev234/ece5831-2024-final-project)
-- **YouTube Demo and presentation**: [YouTube Demo Link](https://www.youtube.com/watch?v=pzuS7wjcyxs)
+- **YouTube presentation**: [YouTube ppt Link](https://www.youtube.com/watch?v=pzuS7wjcyxs)
+- **Youtube Demo Video**: [YouTube Demo Link](https://youtu.be/6M0pVdon5Go)
 - **Slides** : [Link to slides](https://docs.google.com/presentation/d/1mFCTZFJyTdLR6VNEdT-oMyTM9_kmJiBF_O7iPJ0ez6I/edit?usp=sharing)
 
 ---
