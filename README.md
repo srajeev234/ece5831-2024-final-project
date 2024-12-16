@@ -40,17 +40,17 @@ This project is the **final submission** for the course **ECE5831**  at the **Un
 - NumPy, Pandas, Pickle
 
 ### Setup Instructions
-1. Clone the repository:
-
-2. Run the Flask application:
+1. Clone the repository
+2. Please download tokenizer.pkl and glove.6B.200d.txt from the google drive in the project zip folder
+3. Run the Flask application:
     ```bash
     python app.py
     ```
-3. Open your browser and go to:
+4. Open your browser and go to:
     ```
     http://127.0.0.1:5000/
     ```
-4. Upload an image and view the generated caption.
+5. Upload an image and view the generated caption.
 
 ---
 
@@ -63,8 +63,7 @@ The model was trained on the **Flickr8k Dataset**. You can access the dataset he
 ## Additional Resources
 - **Google Drive (Project Files)**: [Google Drive Link](https://drive.google.com/drive/folders/18OZUeBjL5y-FdicXgfU55N78aBcFO2fI?usp=drive_link)  
 - **Github**: [Github Link](https://github.com/srajeev234/ece5831-2024-final-project)
-- **Presentation**: [Project Presentation](https://example.com/presentation)  
-- **YouTube Demo**: [YouTube Demo Link](https://www.youtube.com/watch?v=pzuS7wjcyxs)
+- **YouTube Demo and presentation**: [YouTube Demo Link](https://www.youtube.com/watch?v=pzuS7wjcyxs)
 - **Slides** : [Link to slides](https://docs.google.com/presentation/d/1mFCTZFJyTdLR6VNEdT-oMyTM9_kmJiBF_O7iPJ0ez6I/edit?usp=sharing)
 
 ---
@@ -98,7 +97,8 @@ The system uses the following components:
 ---
 
 ## Acknowledgment
-This project builds on the foundational work provided by **Quadeer Shaikh's Kaggle implementation**. Special thanks to OpenAI's ChatGPT for assistance in debugging and code optimization.
+This project builds on the foundational work provided by **Quadeer Shaikh's Kaggle implementation**. 
+Special thanks to OpenAI's ChatGPT for assistance in debugging and code optimization.
 
 ---
 
